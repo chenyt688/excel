@@ -12,7 +12,7 @@ public abstract class MessageHead {
     private String bodyValue_P_FROM;   //p端拆包请求体
     private String bodyValue_P_TO;     //P端组包请求体
     private String reqHead;            //定义文件请求头
-    private String resHead;            //定义文件响应头
+    private String rspHead;            //定义文件响应头
     private String reqBody;            //定义文件请求体
     private String rspBody;            //定义文件响应体
 

@@ -48,7 +48,7 @@ public class ServerXML {
                         "\t</request>\n" +
                         "\t<response>\n" +
                         "\t\t<sdoroot>\n" +
-                        "\t\t\t" + hashMapHeadInfo.get("resHead").toString().replace("\t", "\t\t\t\t").replace("</head>", "\t\t\t</head>")
+                        "\t\t\t" + hashMapHeadInfo.get("rspHead").toString().replace("\t", "\t\t\t\t").replace("</head>", "\t\t\t</head>")
                 );
                 if(hashMapHeadInfo.get("rspBody") != null){
                     stringBuffer.append("\t\t\t<"+hashMapHeadInfo.get("rspBody")+" is_struct=\"true\">\n");

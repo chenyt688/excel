@@ -64,7 +64,7 @@ public class MessageHeadCallPositive extends MessageHead {
             "\t<OPENReqTime metadataid=\"OPENReqTime\" />\n" +
             "</head>\n";
     //定义文件响应头
-    private String resHead = "<head is_struct=\"true\">\n" +
+    private String rspHead = "<head is_struct=\"true\">\n" +
             "\t<OPENSeqNo metadataid=\"OPENSeqNo\" />\n" +
             "\t<OPENRspTime metadataid=\"OPENRspTime\" />\n" +
             "\t<OPENRetCode metadataid=\"OPENRetCode\" />\n" +
@@ -88,7 +88,7 @@ public class MessageHeadCallPositive extends MessageHead {
         hashMap.put("bodyValue_P_FROM", bodyValue_P_FROM);
         hashMap.put("bodyValue_P_TO", bodyValue_P_TO);
         hashMap.put("reqHead", reqHead);
-        hashMap.put("resHead", resHead);
+        hashMap.put("rspHead", rspHead);
         hashMap.put("reqBody", reqBody);
         hashMap.put("rspBody", rspBody);
         return hashMap;

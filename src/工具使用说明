@@ -9,9 +9,9 @@
         P组 headValue_P_TO = null;                      bodyValue_P_TO = "reqData";     (无报文头，数据在reqData结构体中)
         定义文件
         reqHead = "<head> ... </head>"          //定义文件请求头
-        resHead = "<head> ... </head>"          //定义文件响应头
+        rspHead = "<head> ... </head>"          //定义文件响应头
         reqBody =  null                         //定义文件请求体
-        resBody =  null                         //定义文件响应体
+        rspBody =  null                         //定义文件响应体
     ②正调
         C拆 headValue_P_FROM = "<head> ... </head>"     bodyValue_P_FROM = "body";
         C组 headValue_P_TO = "<head> ... </head>"       bodyValue_P_ = "body";
@@ -19,8 +19,8 @@
         P组 headValue_C_TO = null;                      bodyValue_C_TO = "reqData";     (无报文头，数据在reqData结构体中)
         定义文件
         reqHead = "<head> ... </head>"          //定义文件请求头
-        resHead = "<head> ... </head>"          //定义文件响应头
-        reqBody =  "rspData";                   //定义文件请求体
-        resBody =  "reqData";                   //定义文件响应体
+        rspHead = "<head> ... </head>"          //定义文件响应头
+        reqBody =  "reqData";                   //定义文件请求体
+        rspBody =  "rspData";                   //定义文件响应体
 4、定义完报文头、体信息后修改 callBack 、callPositive （分别为回调、正调类名：相对对路径）
 5、执行main方法，生成路径（特殊映射关系需自己修改）
