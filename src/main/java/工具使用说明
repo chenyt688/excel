@@ -1,0 +1,26 @@
+1、在主方法中修改excelFilePath（目标读取excel文件路径）、productFilePath（生成配置文件的路径）
+2、修改startSheetIndex（实际excel工作区间开始下标，0开始计数）
+3、bean目录下新建正调、回调  报文头 报文体信息(根据excel文档左边数据生成拆组包文件  映射关系A-A-B)
+    例如：
+    ①回调
+        C拆 headValue_C_FROM = "<head> ... </head>"     bodyValue_C_FROM = "body";
+        C组 headValue_C_TO = "<head> ... </head>"       bodyValue_C_ = "body";
+        P拆 headValue_P_FROM = null;                    bodyValue_P_FROM = "rspData";   (无报文头，数据在rspData结构体中)
+        P组 headValue_P_TO = null;                      bodyValue_P_TO = "reqData";     (无报文头，数据在reqData结构体中)
+        定义文件
+        reqHead = "<head> ... </head>"          //定义文件请求头
+        resHead = "<head> ... </head>"          //定义文件响应头
+        reqBody =  null                         //定义文件请求体
+        resBody =  null                         //定义文件响应体
+    ②正调
+        C拆 headValue_P_FROM = "<head> ... </head>"     bodyValue_P_FROM = "body";
+        C组 headValue_P_TO = "<head> ... </head>"       bodyValue_P_ = "body";
+        P拆 headValue_C_FROM = null;                    bodyValue_C_FROM = "rspData";   (无报文头，数据在rspData结构体中)
+        P组 headValue_C_TO = null;                      bodyValue_C_TO = "reqData";     (无报文头，数据在reqData结构体中)
+        定义文件
+        reqHead = "<head> ... </head>"          //定义文件请求头
+        resHead = "<head> ... </head>"          //定义文件响应头
+        reqBody =  "rspData";                   //定义文件请求体
+        resBody =  "reqData";                   //定义文件响应体
+4、定义完报文头、体信息后修改 callBack 、callPositive （分别为回调、正调类名：相对对路径）
+5、执行main方法，生成路径（特殊映射关系需自己修改）
