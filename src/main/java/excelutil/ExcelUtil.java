@@ -26,6 +26,7 @@ public class ExcelUtil {
     private EXcelBean excelBean = null;
     private Log log = LogFactory.getLog(ExcelUtil.class);
     private HashMap hashHeadInfo = null;
+    private ArrayList<EXcelBean> arrayList = null;
 
     /*
      * 读取Excel海量数据
@@ -70,13 +71,15 @@ public class ExcelUtil {
                 //生成接口空文件
                 makeDirAndFile(sheet, productFilePath);
                 //生成metada.xml文件,并返回ArrayList(字段信息)
-                ArrayList<EXcelBean> arrayList = productMetadata(sheet, productFilePath);
+                arrayList = productMetadata(sheet, productFilePath);
+
                 //生成定义文件
                 serverXML.produceServerXML(arrayList, productFilePath, folderName, hashHeadInfo);
                 //生成cons_from文件
                 consumeXML.produceC_From(arrayList, productFilePath, folderName, hashHeadInfo);
                 //生成cons_to文件
                 consumeXML.produceC_To(arrayList, productFilePath, folderName, hashHeadInfo);
+
                 //生成pvd_from文件
                 provideXML.produceP_From(arrayList, productFilePath, folderName, hashHeadInfo);
                 //生成pvd_to文件

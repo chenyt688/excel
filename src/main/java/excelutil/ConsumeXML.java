@@ -75,18 +75,15 @@ public class ConsumeXML {
             stringBuffer.append("\t" + hashHeadInfo.get("headValue_C_TO").toString().replace("\t", "\t\t").replace("</head>", "\t</head>"));
 
         }
-
         if (hashHeadInfo.get("bodyValue_C_TO") != null){
             stringBuffer.append("\t<"+hashHeadInfo.get("bodyValue_C_TO").toString()+" is_struct=\"true\">\n");
             indentationNum = indentationNum + 1;
         }
-
         for (EXcelBean e : arrayList) {
             if ("out".equals(e.getInOrOut()) && (e.getMapField() != null && e.getMapField() != "")) {
                 stringBuffer = getNewStringBuffer(stringBuffer, e);
             }
         }
-
         if (hashHeadInfo.get("bodyValue_C_TO") != null){
             stringBuffer.append("\t</"+hashHeadInfo.get("bodyValue_C_TO").toString()+">\n");
         }
