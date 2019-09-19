@@ -4,6 +4,7 @@ import bean.EXcelBean;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -21,7 +22,7 @@ public class ConsumeXML {
      */
     public void produceC_From(ArrayList<EXcelBean> arrayList, String productFilePath, String folderName, HashMap hashHeadInfo) {
         StringBuffer stringBuffer = new StringBuffer();
-        String cons_from = productFilePath + folderName + "\\" + "cons_" + folderName + "V1_from_JSON" + ".xml";
+        String cons_from = productFilePath + folderName + File.separator + "cons_" + folderName + "V1_from_JSON" + ".xml";
         stringBuffer.append("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" +
                 "<Json package_type=\"json\">\n"
         );
@@ -65,7 +66,7 @@ public class ConsumeXML {
      */
     public void produceC_To(ArrayList<EXcelBean> arrayList, String productFilePath, String folderName, HashMap hashHeadInfo) {
         StringBuffer stringBuffer = new StringBuffer();
-        String cons_to = productFilePath + folderName + "\\" + "cons_" + folderName + "V1_to_JSON" + ".xml";
+        String cons_to = productFilePath + folderName + File.separator + "cons_" + folderName + "V1_to_JSON" + ".xml";
 
         stringBuffer.append("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" +
                 "<Json package_type=\"json\">\n"

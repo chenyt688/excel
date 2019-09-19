@@ -123,12 +123,12 @@ public class ExcelUtil {
     public void makeDirAndFile(Sheet sheet, String productFilePath) {
         String folderName = sheet.getSheetName();
 
-        String metadataName = productFilePath + folderName + "\\metadata" + ".xml";
-        String cons_from = productFilePath + folderName + "\\" + "cons_" + folderName + "V1_from_JSON" + ".xml";
-        String cons_to = productFilePath + folderName + "\\" + "cons_" + folderName + "V1_to_JSON" + ".xml";
-        String prvd_from = productFilePath + folderName + "\\" + "prvd_" + folderName + "V1_from_JSON" + ".xml";
-        String prvd_to = productFilePath + folderName + "\\" + "prvd_" + folderName + "V1_to_JSON" + ".xml";
-        String service = productFilePath + folderName + "\\" + "service_" + folderName + "V1" + ".xml";
+        String metadataName = productFilePath + folderName + File.separator +"metadata" + ".xml";
+        String cons_from = productFilePath + folderName + File.separator + "cons_" + folderName + "V1_from_JSON" + ".xml";
+        String cons_to = productFilePath + folderName + File.separator + "cons_" + folderName + "V1_to_JSON" + ".xml";
+        String prvd_from = productFilePath + folderName + File.separator + "prvd_" + folderName + "V1_from_JSON" + ".xml";
+        String prvd_to = productFilePath + folderName + File.separator + "prvd_" + folderName + "V1_to_JSON" + ".xml";
+        String service = productFilePath + folderName + File.separator + "service_" + folderName + "V1" + ".xml";
 
         File file1 = new File(metadataName);
         File file2 = new File(cons_from);
@@ -204,7 +204,7 @@ public class ExcelUtil {
     public ArrayList<EXcelBean> productMetadata(Sheet sheet, String productFilePath) {
         ArrayList<EXcelBean> arrayList = new ArrayList<EXcelBean>();
         StringBuffer stringBuffer = new StringBuffer();
-        String metadataFilePath = productFilePath + sheet.getSheetName() + "\\metadata" + ".xml";
+        String metadataFilePath = productFilePath + sheet.getSheetName() + File.separator + "metadata" + ".xml";
         stringBuffer.append("<?xml version=\"1.0\" encoding=\"utf-8\"?>\n" +
                 "<metadata>\n"
         );
